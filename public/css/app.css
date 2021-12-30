@@ -1,0 +1,102 @@
+/* *{
+    background-color: var(--bs-body-bg) !important;
+    color: var(--bs-body-color) !important;
+} */
+
+.sidebar-toggler {
+    margin-right: 2rem;
+}
+
+#navbar-container {
+    margin-left: 1rem;
+}
+
+body {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--bs-body-bg);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-right: 1px solid var(--bs-body-color);
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 21px;
+    color: var(--bs-body-color);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: gray;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 35px;
+    margin-left: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+#sidebar-toggler:hover {
+    cursor: pointer;
+}
+
+.sidenav-line{
+    color: var(--bs-body-color);
+}
+
+#app {
+    transition: margin-left 0.5s;
+}
+
+a, span{
+    color: var(--bs-body-color) !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 .063rem .125rem var(--bs-body-color) !important;
+}
+
+.card{
+    border: 1px solid var(--bs-body-color);
+}
+
+.card-header{
+    border-bottom: 1px solid var(--bs-body-color);
+}
+
+.theme-list{
+    display: inline;
+    justify-content: center;
+    margin-right: 1rem;
+    width: 10rem;
+}
+
+.form-select{
+    border: 1px solid var(--bs-body-color);
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+}

@@ -1,0 +1,32 @@
+.auth-title{
+    font-size: 25px;
+    font-weight: bold;
+    background-color: var(--bs-body-bg);
+}
+
+.center-container{
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+    height: 80vh;
+}
+
+.auth-label{
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+.remember-container{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+}
+
+#particles-js{
+    height: 100%;
+    width: 100%;
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    z-index: -10;
+    position: fixed;
+}
