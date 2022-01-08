@@ -35,9 +35,12 @@
         <hr class="sidenav-line">
         <a href="{{ route('upload_image') }}">Upload Image</a>
         <hr class="sidenav-line">
-        <a href="#">Profile</a>
+        <a href="http://www.google.com/search?q=hospitals+near+me" target="_blank">Hospitals Near Me</a>
         <hr class="sidenav-line">
-        <a href="#">About Us</a>
+        <a href="https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-for-public" target="_blank">Get Help</a>
+        <hr class="sidenav-line">
+        <a href="https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks"
+            target="_blank">Learn More</a>
     </div>
     <div id="app">
         <nav
@@ -101,8 +104,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                         document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
