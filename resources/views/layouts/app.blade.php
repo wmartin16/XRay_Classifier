@@ -37,7 +37,7 @@
         <hr class="sidenav-line">
         <a href="http://www.google.com/search?q=hospitals+near+me" target="_blank">Hospitals Near Me</a>
         <hr class="sidenav-line">
-        <a href="https://www.who.int/indonesia/news/novel-coronavirus/qa/qa-for-public" target="_blank">Get Help</a>
+        <a href="{{ route('help') }}">Get Help</a>
         <hr class="sidenav-line">
         <a href="https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks"
             target="_blank">Learn More</a>
@@ -106,7 +106,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                             document.getElementById('logout-form').submit();">
+                                                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

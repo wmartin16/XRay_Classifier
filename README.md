@@ -22,7 +22,7 @@ Users then are able to upload chest x-ray scan images and then obtain the classi
 
 Curious users can similarly learn more about Convolutional Neural Networks that power our algorithm.
 
-![](#)
+![](https://github.com/wmartin16/XRay_Classifier/raw/main/docs/faq.png)
 
 ## Instructions
 

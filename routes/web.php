@@ -26,6 +26,7 @@ Route::get('/login', [AuthController::class, 'displayLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'doLogin']);
 Route::post('/logout', [AuthController::class, 'doLogout'])->name('logout');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/help', [HomeController::class, 'help'])->name('help');
 Route::get('/register', [RegisterController::class, 'displayRegister'])->name('register');
 Route::post('/register', [RegisterController::class, 'doRegister']);
 Route::put('/themes', [ThemeController::class, 'changeTheme'])->name('change_theme');
