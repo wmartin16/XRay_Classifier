@@ -21,13 +21,12 @@ class UploadImageController extends Controller
     public function storeImage(Request $request)
     {
         $rules = [
-            'upload_img' => ['required', 'file', 'image']
+            'upload_img' => ['required', 'file', 'image'],
         ];
 
         $validator = Validator::make($request->all(), $rules);
 
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
@@ -35,8 +34,10 @@ class UploadImageController extends Controller
         $fileExtension = $request['upload_img']->getClientOriginalExtension();
         $fileName = $request['upload_img']->getClientOriginalName();
 
-        $request['upload_img']->move($basePath, 'upload_' . intval(time()) . '_' . $fileName);
+        $saveName = 'upload_' . intval(time()) . '_' . $fileName;
 
-        return redirect()->back()->with('success', 'Successfully uploaded the image');
+        $request['upload_img']->move($basePath, $saveName);
+
+        return redirect()->back()->with(['success' => 'Successfully uploaded the image', 'image' => $basePath . '/' . $saveName]);
     }
 }

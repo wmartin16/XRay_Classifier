@@ -19,7 +19,8 @@
 
     <!-- Styles -->
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ session('theme', 'darkly') === 'bootstrap' ? asset('bootstrap/css/bootstrap.min.css') : asset('bootstrap/darkly/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ session('theme', 'darkly') === 'bootstrap' ? asset('bootstrap/css/bootstrap.min.css') : asset('bootstrap/darkly/bootstrap.min.css') }}">
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -39,7 +40,8 @@
         <a href="#">About Us</a>
     </div>
     <div id="app">
-        <nav class="navbar navbar-expand-md {{ session('theme', 'darkly') === 'bootstrap' ? 'navbar-light' : 'navbar-dark' }} shadow-sm">
+        <nav
+            class="navbar navbar-expand-md {{ session('theme', 'darkly') === 'bootstrap' ? 'navbar-light' : 'navbar-dark' }} shadow-sm">
             <div id="navbar-container" class="container">
                 @auth
                     <div class="sidebar-toggler">
@@ -70,8 +72,12 @@
                                 @method('PUT')
                                 {{-- <label for="theme-select">Theme: </label> --}}
                                 <select class="form-select d-inline theme-select" name="theme" id="theme-select">
-                                    <option value="light" {{ session('theme', 'darkly') === 'bootstrap' ? 'selected' : '' }}>Light</option>
-                                    <option value="dark" {{ session('theme', 'darkly') === 'bootstrap' ? '' : 'selected' }}>Dark</option>
+                                    <option value="light"
+                                        {{ session('theme', 'darkly') === 'bootstrap' ? 'selected' : '' }}>Light
+                                    </option>
+                                    <option value="dark"
+                                        {{ session('theme', 'darkly') === 'bootstrap' ? '' : 'selected' }}>Dark
+                                    </option>
                                 </select>
                             </form>
                         </li>
@@ -96,7 +102,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

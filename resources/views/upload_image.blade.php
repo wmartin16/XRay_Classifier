@@ -1,5 +1,54 @@
 @extends('layouts.app')
 
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+
+    <script>
+        let net;
+
+        function argmax(array) {
+            return [].reduce.call(array, (m, c, i, arr) => c > arr[m] ? i : m, 0)
+        }
+
+        async function loadModel() {
+            console.log('Loading mobilenet..');
+
+            // Load the model.
+            net = await tf.loadLayersModel('/model/model.json');
+            console.log('Successfully loaded model');
+
+            const image = document.getElementById('inputImage');
+
+            if (image) {
+                const tensorImage = tf.browser.fromPixels(image).resizeBilinear([224, 224]).toFloat().div(255)
+                    .expandDims();
+                // Make a prediction through the model on our image.
+                return await net.predict(tensorImage).data();
+            }
+        }
+
+        loadModel().then(result => {
+            const id2label = {
+                0: "COVID",
+                1: "Normal",
+                2: "Pneumonia"
+            };
+
+            if (!result) {
+                return;
+            }
+            const prediction = id2label[argmax(result)];
+
+            console.log(prediction);
+            document.getElementById('predictedStrong').innerText = 'Predicted';
+            document.getElementById('predictedClass').innerText = prediction;
+            document.getElementById('confidenceStrong').innerText = 'Confidence';
+            document.getElementById('predictionConfidence').innerText = (result[argmax(result)] * 100).toFixed(2) +
+                '%';
+        });
+    </script>
+@endsection
+
 @section('content')
     <div class="container">
         <h1>Upload Image</h1>
@@ -10,7 +59,8 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-form-label">Upload your image here</label>
                     <div class="custom-file mb-2">
-                        <input type="file" name="upload_img" class="custom-file-input @error('upload_img') is-invalid @enderror" id="fileInput">
+                        <input type="file" name="upload_img"
+                            class="custom-file-input @error('upload_img') is-invalid @enderror" id="fileInput">
                     </div>
 
                     @error('upload_img')
@@ -36,6 +86,18 @@
                             <div class="alert alert-success" role="alert">
                                 <strong>{{ session()->get('success') }}</strong>
                             </div>
+                            <div class="d-flex">
+                                <img crossorigin="anonymous" id="inputImage"
+                                    style="height:250px;width:250px;margin-right:20px;"
+                                    src="{{ session()->get('image') }}" alt="">
+                                <div>
+                                    <strong id="predictedStrong"></strong>
+                                    <p id="predictedClass"></p>
+                                    <strong id="confidenceStrong"></strong>
+                                    <p id="predictionConfidence"></p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 @endif
