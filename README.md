@@ -10,13 +10,19 @@ We trained and fine-tuned several Convolutional Neural Network-based models on m
 
 This is the page where users register for the web app and then login using their credentials.
 
+![](https://github.com/wmartin16/XRay_Classifier/raw/main/docs/login.png)
+
 ### Upload and Predict
 
 Users then are able to upload chest x-ray scan images and then obtain the classifier's prediction.
 
+![](https://github.com/wmartin16/XRay_Classifier/raw/main/docs/predict.png)
+
 ### Learn Classification Algorithm
 
 Curious users can similarly learn more about Convolutional Neural Networks that power our algorithm.
+
+![](#)
 
 ## Instructions
 
