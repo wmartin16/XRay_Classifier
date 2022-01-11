@@ -18,9 +18,9 @@ Users then are able to upload chest x-ray scan images and then obtain the classi
 
 ![](https://github.com/wmartin16/XRay_Classifier/raw/main/docs/predict.png)
 
-### Learn Classification Algorithm
+### Get Next Steps and Suggestions
 
-Curious users can similarly learn more about Convolutional Neural Networks that power our algorithm.
+Users can get the WHO-suggested steps when they feel necessary.
 
 ![](https://github.com/wmartin16/XRay_Classifier/raw/main/docs/faq.png)
 
